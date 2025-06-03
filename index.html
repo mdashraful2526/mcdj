@@ -1,0 +1,565 @@
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঈদ উল আযহা এমবি গিফট</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .eid-text {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .mb-text {
+            font-size: 36px;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .banner {
+            background: linear-gradient(45deg, #ff4757, #ff6b6b);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255,71,87,0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        
+        .eid-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            display: none;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 30px 20px;
+        }
+        
+        .total-mb {
+            text-align: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .total-amount {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .total-text {
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0.95;
+        }
+        
+        .balance-section {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            color: white;
+            text-align: center;
+        }
+        
+        .balance-display {
+            margin-bottom: 15px;
+        }
+        
+        .balance-amount {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .balance-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .number-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .number-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .number-input:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .collect-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .collect-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.3);
+        }
+        
+        .collect-btn:active {
+            transform: translateY(0);
+        }
+        
+        .important-notice {
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+            border: 3px solid #fff;
+            box-shadow: 0 10px 30px rgba(255,71,87,0.3);
+        }
+        
+        .important-notice .notice-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .important-notice .notice-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .mb-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .mb-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            border: none;
+            color: white;
+            padding: 20px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mb-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,107,107,0.3);
+        }
+        
+        .mb-button:active {
+            transform: translateY(0);
+        }
+        
+        .mb-button.clicked {
+            background: #28a745;
+            pointer-events: none;
+        }
+        
+        .progress-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .collected-mb {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .phone-section {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .phone-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .phone-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+        }
+        
+        .message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .decorative-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            color: rgba(255,255,255,0.3);
+            animation: twinkle 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.2); }
+        }
+        
+        .crescent {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            position: relative;
+        }
+        
+        .crescent::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decorative-elements">
+            <div class="star" style="top: 10%; left: 10%; font-size: 20px;">★</div>
+            <div class="star" style="top: 20%; right: 15%; font-size: 15px;">✦</div>
+            <div class="star" style="top: 30%; left: 80%; font-size: 18px;">⭐</div>
+            <div class="star" style="bottom: 20%; left: 20%; font-size: 16px;">✨</div>
+            <div class="crescent"></div>
+        </div>
+        
+        <div class="header">
+            <div class="eid-text">🌙 ঈদ উপলক্ষে 🌙</div>
+            <div class="mb-text">MB গিফট</div>
+            <p class="subtitle">বিশেষ অফার - সীমিত সময়ের জন্য</p>
+        </div>
+        
+        <div class="content">
+            <div class="total-mb">
+                <div class="total-amount">৩০ জিবি</div>
+                <div class="total-text">মোট এমবি গিফট</div>
+            </div>
+
+            <div class="important-notice">
+                <div class="notice-title">⚠️ গুরুত্বপূর্ণ নোটিশ ⚠️</div>
+                <div class="notice-text">
+                    নাম্বার দেওয়ার পরে অবশ্যই "সংগ্রহ করুন" বাটনে ক্লিক করুন।<br>
+                    অন্যথায় আপনি এমবি পাবেন না!
+                </div>
+            </div>
+            
+            <div class="balance-section">
+                <div class="balance-display">
+                    <div class="balance-amount" id="balanceAmount">০ জিবি</div>
+                    <div class="balance-text">মোট ব্যালেন্স</div>
+                </div>
+                <input type="tel" class="number-input" id="numberInput" placeholder="০১xxxxxxxxx" maxlength="11">
+                <button class="collect-btn" onclick="collectPoints()">সংগ্রহ করুন</button>
+            </div>
+            
+            <div class="mb-buttons">
+                <button class="mb-button" onclick="collectMB(5)" id="btn1">
+                    ৫ জিবি<br>সংগ্রহ করুন
+                </button>
+                <button class="mb-button" onclick="collectMB(8)" id="btn2">
+                    ৮ জিবি<br>সংগ্রহ করুন
+                </button>
+                <button class="mb-button" onclick="collectMB(7)" id="btn3">
+                    ৭ জিবি<br>সংগ্রহ করুন
+                </button>
+                <button class="mb-button" onclick="collectMB(10)" id="btn4">
+                    ১০ জিবি<br>সংগ্রহ করুন
+                </button>
+            </div>
+            
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="collected-mb" id="collectedText">০ জিবি সংগ্রহ হয়েছে</div>
+            </div>
+            
+            <div class="phone-section" id="phoneSection" style="display: none;">
+                <h3 style="margin-bottom: 15px; color: #495057;">আপনার মোবাইল নাম্বার দিন</h3>
+                <input type="tel" class="phone-input" id="phoneInput" placeholder="01xxxxxxxxx" maxlength="11">
+                <button class="submit-btn" onclick="submitPhone()">নাম্বার সাবমিট করুন</button>
+                <div class="message" id="successMessage">
+                    ✅ আপনার নাম্বার সফলভাবে সাবমিট হয়েছে!<br>
+                    কিছুক্ষণের মধ্যে আপনি আপনার এমবি পেয়ে যাবেন।
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let collectedMB = 0;
+        let totalMB = 30;
+        let clickedButtons = 0;
+        
+        function collectPoints() {
+            // Open ad link in new tab
+            window.open('https://www.profitableratecpm.com/p7e48h5g?key=e971f4afd8855761d62dc55d4fc2b43f', '_blank');
+            
+            // Add points after delay (simulate ad viewing)
+            setTimeout(() => {
+                collectedMB += 2; // Add 2GB per click
+                document.getElementById('balanceAmount').textContent = collectedMB + ' জিবি';
+            }, 3000);
+        }
+        
+        function collectMB(amount) {
+            // Open ad link in new tab first
+            window.open('https://www.profitableratecpm.com/p7e48h5g?key=e971f4afd8855761d62dc55d4fc2b43f', '_blank');
+            
+            // Show loading message
+            alert('বিজ্ঞাপন লোড হচ্ছে...');
+            
+            // Add delay to simulate ad experience
+            setTimeout(() => {
+                collectedMB += amount;
+                clickedButtons++;
+                
+                // Update balance display
+                document.getElementById('balanceAmount').textContent = collectedMB + ' জিবি';
+                
+                // Disable clicked button
+                event.target.classList.add('clicked');
+                event.target.innerHTML = '✓ সংগ্রহ হয়েছে';
+                event.target.disabled = true;
+                
+            }, 2000);
+        }
+        
+        function updateProgress() {
+            const percentage = (collectedMB / totalMB) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('collectedText').textContent = collectedMB + ' জিবি সংগ্রহ হয়েছে';
+        }
+        
+        function submitPhone() {
+            const phoneInput = document.getElementById('phoneInput');
+            const phone = phoneInput.value.trim();
+            
+            // Basic validation
+            if (!phone || phone.length !== 11 || !phone.startsWith('01')) {
+                alert('সঠিক মোবাইল নাম্বার দিন (11 সংখ্যার)');
+                return;
+            }
+            
+            // Simulate processing
+            const submitBtn = event.target;
+            submitBtn.textContent = 'প্রসেসিং...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'block';
+                phoneInput.style.display = 'none';
+                submitBtn.style.display = 'none';
+            }, 2000);
+        }
+        
+        // Add some animation on load
+        window.addEventListener('load', () => {
+            const buttons = document.querySelectorAll('.mb-button');
+            buttons.forEach((btn, index) => {
+                setTimeout(() => {
+                    btn.style.transform = 'translateY(0)';
+                    btn.style.opacity = '1';
+                }, index * 200);
+            });
+        });
+        
+        // Initial button styling
+        document.querySelectorAll('.mb-button').forEach(btn => {
+            btn.style.transform = 'translateY(20px)';
+            btn.style.opacity = '0';
+            btn.style.transition = 'all 0.5s ease';
+        });
+    </script>
+</body>
+</html>
